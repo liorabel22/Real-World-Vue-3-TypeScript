@@ -6,9 +6,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import EventService from '@/services/EventService'
-export default {
+
+export default defineComponent({
+  name: 'EventDetails',
   props: ['id'],
   data() {
     return {
@@ -17,12 +20,12 @@ export default {
   },
   created() {
     EventService.getEvent(this.id)
-      .then(response => {
+      .then((response) => {
         this.event = response.data
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error)
       })
   }
-}
+})
 </script>
