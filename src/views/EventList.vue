@@ -23,6 +23,11 @@ export default defineComponent({
       events: [] as EventItem[]
     }
   },
+  computed: {
+    firstEvent(): EventItem {
+      return this.events[0]
+    }
+  },
   created() {
     EventService.getEvents()
       .then((response) => {
@@ -31,6 +36,14 @@ export default defineComponent({
       .catch((error) => {
         console.log(error)
       })
+  },
+  methods: {
+    addEvent(newEvent: EventItem) {
+      this.events.push(newEvent)
+    },
+    secondEvent(): EventItem {
+      return this.events[1]
+    }
   }
 })
 </script>
