@@ -11,6 +11,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  name: 'EventCard',
   props: {
     event: {
       type: Object,
