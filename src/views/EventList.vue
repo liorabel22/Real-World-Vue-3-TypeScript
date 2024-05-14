@@ -20,7 +20,7 @@ export default defineComponent({
   },
   data() {
     return {
-      events: {} as EventItem[]
+      events: [] as EventItem[]
     }
   },
   created() {
