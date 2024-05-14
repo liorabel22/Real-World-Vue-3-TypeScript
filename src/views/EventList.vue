@@ -11,6 +11,8 @@ import { defineComponent } from 'vue'
 import EventCard from '@/components/EventCard.vue'
 import EventService from '@/services/EventService'
 
+import { type EventItem } from '@/types'
+
 export default defineComponent({
   name: 'EventList',
   components: {
@@ -18,7 +20,7 @@ export default defineComponent({
   },
   data() {
     return {
-      events: null
+      events: {} as EventItem[]
     }
   },
   created() {
