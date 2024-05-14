@@ -6,9 +6,10 @@
   </div>
 </template>
 
-<script>
-import EventService from '@/services/EventService'
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import EventService from '../services/EventService'
+export default defineComponent({
   props: ['id'],
   data() {
     return {
@@ -17,12 +18,12 @@ export default {
   },
   created() {
     EventService.getEvent(this.id)
-      .then(response => {
+      .then((response) => {
         this.event = response.data
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error)
       })
   }
-}
+})
 </script>
