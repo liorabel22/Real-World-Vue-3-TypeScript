@@ -8,13 +8,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, type PropType } from 'vue'
+
+import { type EventItem } from '@/types'
 
 export default defineComponent({
   name: 'EventCard',
   props: {
     event: {
-      type: Object,
+      type: Object as PropType<EventItem>,
       required: true
     }
   }

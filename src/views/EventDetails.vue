@@ -13,7 +13,12 @@ import EventService from '@/services/EventService'
 
 export default defineComponent({
   name: 'EventDetails',
-  props: ['id'],
+  props: {
+    id: {
+      type: Number,
+      required: true
+    }
+  },
   data() {
     return {
       event: {} as EventItem
