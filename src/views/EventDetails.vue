@@ -6,15 +6,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { EventItem } from '../types'
-import EventService from '../services/EventService'
-export default defineComponent({
+<script>
+import EventService from '@/services/EventService'
+export default {
   props: ['id'],
   data() {
     return {
-      event: {} as EventItem
+      event: null
     }
   },
   created() {
@@ -26,5 +24,5 @@ export default defineComponent({
         console.log(error)
       })
   }
-})
+}
 </script>
